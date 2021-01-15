@@ -1,9 +1,11 @@
-package ar.alicode.springdemo.mvc;
+package ar.alicode.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import ar.alicode.model.Student;
 
 @Controller
 @RequestMapping("/student")
@@ -26,7 +28,7 @@ public class StudentController {
 			@ModelAttribute("student") Student theStudent) {
 		
 		System.out.println("theStudent: "+theStudent.getFirstName()
-						+" "+theStudent.getLastName());
+						+" "+theStudent.getLastName()+" "+theStudent.getCountry());
 		
 		return "studentConfirmation";
 	}

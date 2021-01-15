@@ -1,4 +1,4 @@
-package ar.alicode.springdemo.mvc;
+package ar.alicode.controller;
 
 import javax.servlet.http.HttpServletRequest;
 

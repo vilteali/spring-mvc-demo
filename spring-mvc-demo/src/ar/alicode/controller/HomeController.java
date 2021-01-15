@@ -1,4 +1,4 @@
-package ar.alicode.springdemo.mvc;
+package ar.alicode.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
