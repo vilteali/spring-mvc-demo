@@ -3,6 +3,7 @@ package ar.alicode.model;
 import java.util.LinkedHashMap;
 
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 public class Student {
@@ -12,6 +13,9 @@ public class Student {
 	@NotNull(message="is required")
 	@Size(min=2, message="is required")
 	private String lastName;
+	
+	@Pattern(regexp="^[a-zA-Z0-9]{5}", message="only 5 chars/digits")
+	private String postalCode;
 	
 	private String country;
 	private LinkedHashMap<String, String> countryOptions;
@@ -51,6 +55,14 @@ public class Student {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+	
+	public String getPostalCode() {
+		return postalCode;
+	}
+
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
 	}
 
 	public String getCountry() {

@@ -12,7 +12,7 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 	<!-- Step 3: Add support for component scanning -->
-	<context:component-scan base-package="ar.alicode.springdemo.mvc" />
+	<context:component-scan base-package="ar.alicode.controller, ar.alicode.model" />
 
 	<!-- Step 4: Add support for conversion, formatting and validation support -->
 	<mvc:annotation-driven/>
@@ -23,7 +23,12 @@
 		<property name="prefix" value="/WEB-INF/view/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-
+	
+	<!-- Load custom message resources -->
+	<bean id="messageSource" 
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames" value="resources/messages.properties"/>
+	</bean>
 </beans>
 
 
