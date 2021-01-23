@@ -2,6 +2,7 @@ package ar.alicode.model;
 
 import java.util.LinkedHashMap;
 
+import ar.alicode.validation.StudentCode;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
@@ -22,6 +23,9 @@ public class Student {
 	private String favoriteLanguage;
 	private LinkedHashMap<String, String> favoriteLanguageOptions;
 	private String[] operatingSystems;
+	
+	@StudentCode
+	private String studentCode;
 	
 	public Student() {
 		
@@ -97,4 +101,11 @@ public class Student {
 		this.operatingSystems = operatingSystems;
 	}
 	
+	public String getStudentCode() {
+		return studentCode;
+	}
+	
+	public void setStudentCode(String studentCode) {
+		this.studentCode = studentCode;
+	}
 }
